@@ -41,7 +41,7 @@ router.post('/', (req, res) => {
     res.send(err)
    }else{
     console.log(addedBook)
-    res.redirect('/book')
+    res.redirect('/books')
    }
  });
 });
@@ -49,7 +49,7 @@ router.post('/', (req, res) => {
 //====================
 //NEW ROUTE
 //====================
-router.get('/new', (req, res) => {
+router.get('books/new', (req, res) => {
  res.render('new.ejs') 
 });
 
@@ -65,7 +65,7 @@ router.get('/:id/edit', (req, res) => {
 //=====================
 //EDIT ROUTE
 //=====================
-router.get('/:index/edit', (req, res) => {
+router.get('books/:index/edit', (req, res) => {
  console.log('hitting edit route')
  res.render('edit.ejs', {
   book: foundBook
@@ -74,7 +74,7 @@ router.get('/:index/edit', (req, res) => {
 //=====================
 //SHOW ROUTE
 //=====================
-router.get('/:index', (req, res) => {
+router.get('books/:index', (req, res) => {
  res.render('show.ejs', {
   book: Book[req.params.index]
  }) 
@@ -99,7 +99,7 @@ router.put('/:id', (req, res) => {
     res.send(err);
    }else{
     console.log(updatedBook, 'check your model')
-    res.redirect('/book')
+    res.redirect('/books')
    }
  })
 });
@@ -110,7 +110,7 @@ router.delete('/:id', (req, res) => {
  Book.findByIdAndRemove(req.params.id, (err, removedBook) => {
    if(err){
     console.log(err, 'this is the error in the delete route');
-    res.redirect('/book')
+    res.redirect('/books')
    }
  }) 
 })

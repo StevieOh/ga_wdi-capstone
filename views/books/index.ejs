@@ -5,12 +5,15 @@
 </head>
 <body>
   <h1>Books In Your Library</h1>
+  <nav>
+  <a href="/book/new">Add a new book</a>
+</nav>
   <ul>
 
   <% for (let i = 0; i < book.length; i++) { %>
     <li> 
 
-    <a href="/book/<%=i%>"><%=book[i].title; %></a>, written by <%=book[i].author;%>. <br> <%if(book[i].currentlyReading === true){%>
+    <a href="/books/<%=i%>"><%=book[i].title; %></a>, <br><small>by <%=book[i].author;%></small>. <br> <%if(book[i].currentlyReading === true){%>
     You are currently reading this book.
     <%} else {%>
     <%} %>
@@ -20,18 +23,14 @@
     You have not yet read this book.
     <%} %>
 
-    <form method="POST" action="/book/<% book[i].id%>?_method=DELETE">
-      <button type="submit" name="DELETE">DELETE</button> 
-    </form>
+  
    
-    <a href="/book/<%=book[i].id%>/edit">EDIT</a>
+    <a href="/books/<%=book[i].id%>/edit">EDIT</a>
     
 <%} %>
 
     </li>
   </ul>
-<nav>
-  <a href="/book/new">Add a new book</a>
-</nav>
+
 </body>
 </html>
