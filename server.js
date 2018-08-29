@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override')
 const ejsLint = require('ejs-lint');
+const superagent = require('superagent');
 
 require('./db/db')
 
@@ -29,27 +30,20 @@ app.listen(3000, () => {
 })
 
 
+app.get("/googlebooks/search/:query", (req, res) => {
+  const appid = "AIzaSyA4_x0zZZBmb4t2Ker20t_d5pdSJ7EtbBov";
+  superagent
+    .get("https://www.googleapis.com/books/v1/volumes?q" + query + "&key=" + appid)
+    .end((err, data) => {
+      res.json(JSON.parse(data.items));
+    });
+});
+
+
+// {
+//   "title": string,
+//   "description": string,
+// }
 
 
 
-
-
-// app.get("/openweather/current/:city", (req, res) => {
-//   const appid = "a0780696d685b485af6974df3e8011b7";
-//   const units = "imperial";
-//   request
-//     .get("http://api.openweathermap.org/data/2.5/weather?q=" + req.params.city + "&appid=" + appid + "&units=" + units)
-//     .end((err, data) => {
-//       res.json(JSON.parse(data.text));
-//   });
-// });
-//   // Forecast Weather Data
-// app.get("/openweather/forecast/:city", (req, res) => {
-//   const appid = "a0780696d685b485af6974df3e8011b7";
-//   const units = "imperial";
-//   request
-//     .get("http://api.openweathermap.org/data/2.5/forecast?q=" + req.params.city + "&appid=" + appid + "&units=" + units)
-//     .end((err, data) => {
-//       res.json(JSON.parse(data.text));
-//   });
-// });

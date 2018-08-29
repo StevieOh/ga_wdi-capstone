@@ -3,6 +3,7 @@ const express = require('express');
 //set up the router
 const router = express.Router();
 const Book = require('../models/book');
+const Author = require('../models/author');
 
 //=====================
 //THE INDEX ROUTE

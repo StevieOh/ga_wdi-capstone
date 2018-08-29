@@ -6,14 +6,14 @@
 <body>
   <h1>Books In Your Library</h1>
   <nav>
-  <a href="/book/new">Add a new book</a>
+  <a href="/books/new">Add a new book</a>
 </nav>
   <ul>
 
   <% for (let i = 0; i < book.length; i++) { %>
     <li> 
 
-    <a href="/books/<%=i%>"><%=book[i].title; %></a>, <br><small>by <%=book[i].author;%></small>. <br> <%if(book[i].currentlyReading === true){%>
+    <a href="/books/<%=i%>"><%=book[i].title; %></a>, <br><small>by <%=book[i].author;%>. <br><strong> <%if(book[i].currentlyReading === true){%>
     You are currently reading this book.
     <%} else {%>
     <%} %>
@@ -21,11 +21,11 @@
     You have previously read this book.
     <%} else {%>
     You have not yet read this book.
-    <%} %>
-
+    <%} %></strong>
+    <br>
   
    
-    <a href="/books/<%=book[i].id%>/edit">EDIT</a>
+    <a href="/books/<%=book[i].id%>/edit">EDIT</a></small>
     
 <%} %>
 
