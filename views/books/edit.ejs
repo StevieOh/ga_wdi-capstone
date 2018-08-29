@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EDIT LIBRARY</title>
+</head>
+<body>
+  <h1>Edit Your Library</h1>
+
+  <form method="POST" action='/book/<%=book.id%>?_method=PUT'>
+    Title: <input type="text" name="title" value="<%=book.title%>">
+    author: <input type="text" name="author" value="<%=book.author%>">
+    publishDate: <input type="text" name="publish date" value="<%=book.publishDate%>">
+    ISBN: <input type="text" name="ISBN">
+    currentlyReading: <input type="checkbox" name=" currently reading"
+    <% if(book.currentlyReading === true){%>
+    checked
+    <%}%>
+    >
+    read: <input type="checkbox" name="read"<% if(book.read === true){%>
+    checked
+    <%}%>
+    >
+    <br>
+    <input type="submit" name="Submit Changes">
+
+  </form>
+
+</body>
+</html>
