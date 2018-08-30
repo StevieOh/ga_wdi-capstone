@@ -26,6 +26,7 @@ router.get("/", (req, res) => {
 //==========================
 router.post('/', (req, res) => {
  console.log(req.body, 'this is req.body, should be form info')
+ 
  if(req.body.currentlyReading === 'on'){
   req.body.currentlyReading = true;
  } else{

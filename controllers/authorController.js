@@ -9,9 +9,9 @@ const Book = require('../models/book');
 //==============================
 router.get('/', async (req, res) => {
   try{
-    const foundAuthor = await Author.find() 
-      res.render('author/index.ejs', {
-        author: foundAuthors
+    const foundAuthors = await Author.find() 
+      res.render('authors/index.ejs', {
+        authors: foundAuthors
     });
   } catch (err){
     res.send(err);
