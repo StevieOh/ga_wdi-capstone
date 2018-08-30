@@ -1,0 +1,26 @@
+header{
+  border: solid 5px black;
+  background-image: url("https://www.helperhelper.com/wp-content/uploads/2015/10/bigstock-Stack-Of-Books-70033240.jpg");
+  height: 400px;
+  max-width: 100%;
+  color: white;
+}
+#title{
+  font-family: 'Bitter', serif;
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+}
+body{
+  background-image: url("https://califur.com/wp-content/uploads/2015/07/parchment.jpg");
+  font-family: 'Bitter', serif;
+  list-style: none;
+}
+
+.footer{
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  bottom: 0;
+}
+

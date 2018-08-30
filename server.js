@@ -11,6 +11,8 @@ require('./db/db')
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(methodOverride('_method'));
 
+app.use(express.static('public'));
+
 const corsOptions = {
   origin: 'http://localhost:3000',
   credentials: true,
@@ -34,10 +36,9 @@ app.get('/', (req, res) => {
 
 
 
-// app.listen(3000, () => {
-//   console.log("i am listening on port 3000")
-// })
-
+app.listen(3000, () => {
+  console.log("i am listening on port 3000")
+})
 
 app.get("/googlebooks/search/:query", (req, res) => {
   const appid = "AIzaSyA4_x0zZZBmb4t2Ker20t_d5pdSJ7EtbBo";

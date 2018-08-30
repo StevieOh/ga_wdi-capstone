@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>EDIT LIBRARY</title>
-</head>
-<body>
+<%- include('../partials/header'); -%>
+
+
+
   <h1>Edit Your Library</h1>
 
   <form method="POST" action='/books/<%=book.id%>?_method=PUT'>
@@ -27,7 +25,4 @@
   
    
     
-
-
-</body>
-</html>
+<%- include('../partials/footer'); -%>

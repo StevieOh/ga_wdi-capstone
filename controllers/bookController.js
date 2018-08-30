@@ -51,8 +51,8 @@ router.post('/', (req, res) => {
 //====================
 //NEW ROUTE
 //====================
-router.get('books/new', (req, res) => {
- res.render('new.ejs') 
+router.get('/new', (req, res) => {
+ res.render('books/new.ejs') 
 });
 
 router.get('/:id/edit', (req, res) => {
@@ -67,7 +67,7 @@ router.get('/:id/edit', (req, res) => {
 //=====================
 //EDIT ROUTE
 //=====================
-router.get('books/:index/edit', (req, res) => {
+router.get('/books/:index/edit', (req, res) => {
  console.log('hitting edit route')
  res.render('edit.ejs', {
   book: foundBook
@@ -76,7 +76,7 @@ router.get('books/:index/edit', (req, res) => {
 //=====================
 //SHOW ROUTE
 //=====================
-router.get('books/:index', (req, res) => {
+router.get('/books/:index', (req, res) => {
  res.render('show.ejs', {
   book: Book[req.params.index]
  }) 
