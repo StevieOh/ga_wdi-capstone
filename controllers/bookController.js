@@ -48,11 +48,14 @@ router.post('/', (req, res) => {
  });
 });
 
+
+
+
 //====================
 //NEW ROUTE
 //====================
-router.get('/new', (req, res) => {
- res.render('books/new.ejs') 
+router.get('/search', (req, res) => {
+ res.render('books/search.ejs') 
 });
 
 router.get('/:id/edit', (req, res) => {

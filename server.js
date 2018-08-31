@@ -40,7 +40,8 @@ app.listen(3000, () => {
   console.log("i am listening on port 3000")
 })
 
-app.get("/googlebooks/search/:query", (req, res) => {
+app.post("/googlebooks/search/", (req, res) => {
+  console.log(req.body);
   const appid = "AIzaSyA4_x0zZZBmb4t2Ker20t_d5pdSJ7EtbBo";
   superagent
     .get("https://www.googleapis.com/books/v1/volumes?q=" + req.params.query + "&key=" + appid)

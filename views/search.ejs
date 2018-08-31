@@ -1,0 +1,18 @@
+<%- include('../partials/header'); -%>
+
+
+
+  <form action='/books' method='POST'>
+    Title: <input type="hidden" name="title"><br>
+    Author: <input type="hidden" name="author"><br>
+    ISBN:<input type="hidden" name="ISBN"><br>
+    Publish Date: <input type="hidden" name="publishDate"><br>
+    description: <input type="hidden" name="description"><br>
+    Currently Reading: <input type="checkbox" name="currentlyReading"><br>
+    Read:<input type="checkbox" name="Read"><br>
+    <input type="submit">
+
+  </form>
+<script src="scripts/googlebooks.js"></script>
+
+<%- include('../partials/footer'); -%>

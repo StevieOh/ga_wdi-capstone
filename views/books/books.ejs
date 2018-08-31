@@ -1,0 +1,25 @@
+<%- include('../partials/header'); -%>
+
+
+  <h2>Title: <%= book.title%> </h2>
+  <br>
+  <h2>Author: <%= book.author%></h2>
+  <br>
+  <h2>Publish Date: <%=book.publishDate%></h2>
+  <br>
+  <h2>ISBN: <%=book.ISBN%> </h2>
+  <br>
+  <h2>Currently Reading: <%if (book.currentlyReading === true) {%>
+    <span>You are currently reading this book.</span>
+    <%}else{%>
+    <%}%> </h2>
+    <br>
+  <h2>Read: <%if (book.read === true) {%>
+    <span>You have read this book.</span>
+    <%}else{%>
+    <span>You have not yet read this book.</span>
+    <%}%></h2>
+
+
+
+<%- include('../partials/footer'); -%>
